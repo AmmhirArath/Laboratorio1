@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Inserción</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-400">
+    <div class="container mx-auto py-8 bg-slate-500">
+        <h1 class="text-3xl font-semibold mb-4 text-slate-100">Registro formulario</h1>
+        
+        <form method="POST" action="php/procesar.php" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 grid grid-rows-6 grid-flow-col gap-4">
+            <div class="mb-4">
+                <label for="nombre" class="block text-gray-700 text-sm font-bold mb-2 ">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="apellido" class="block text-gray-700 text-sm font-bold mb-2">Apellido:</label>
+                <input type="text" name="apellido" id="apellido" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="cedula" class="block text-gray-700 text-sm font-bold mb-2">Cédula:</label>
+                <input type="text" name="cedula" id="cedula" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2">Sexo:</label>
+                <div class="mt-2">
+                    <input type="radio" name="sexo" value="F" class="mr-1" required> Femenino
+                    <input type="radio" name="sexo" value="M" class="mr-1" required> Masculino
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label for="fecha_nacimiento" class="block text-gray-700 text-sm font-bold mb-2">Fecha de Nacimiento:</label>
+                <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="direccion" class="block text-gray-700 text-sm font-bold mb-2">Dirección:</label>
+                <input type="text" name="direccion" id="direccion" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                <input type="email" name="email" id="email" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="telefono" class="block text-gray-700 text-sm font-bold mb-2">Teléfono:</label>
+                <input type="text" name="telefono" id="telefono" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="institucion" class="block text-gray-700 text-sm font-bold mb-2">Institución:</label>
+                <div class="relative">
+                    <select name="institucion" id="institucion" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" required>
+                        <option value="Gubernamental">Gubernamental</option>
+                        <option value="Educativa">Educativa</option>
+                        <option value="Privada">Privada</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 12l-8-8 1.5-1.5L10 9l6.5-6.5L18 4z"/></svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label for="especialidad" class="block text-gray-700 text-sm font-bold mb-2">Especialidad:</label>
+                <div class="grid grid-cols-3 gap-4">
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" name="especialidad[]" value="Ingeniería" class="form-checkbox text-indigo-600">
+                        <span class="ml-2 text-gray-700">Ingeniería</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" name="especialidad[]" value="Tecnología" class="form-checkbox text-indigo-600">
+                        <span class="ml-2 text-gray-700">Tecnología</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" name="especialidad[]" value="Educación" class="form-checkbox text-indigo-600">
+                        <span class="ml-2 text-gray-700">Educación</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between">
+                <button type="submit" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Guardar</button>
+            </div>
+        </form>
+       
+    </div>
+    <footer class="bg-white rounded-lg shadow m-4 dark:bg-dark-800 container mx-auto">
+        <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between ">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">Ammhir Carvajal, 8-990-1947, 1LS123
+          </span>
+          </div>
+    </footer>
+</body>
+</html>
